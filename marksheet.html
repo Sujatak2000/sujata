@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>WELCOME</h1>
+    <h2>Please Enter Your Marks Details</h2>
+    <form>
+        English <input type="text" id="i1">
+        Hindi <input type="text" id="i2">
+        CS <input type="text" id="i3">
+        Physics <input type="text" id="i4">
+        Chemistry <input type="text" id="i5">
+        <button onclick="cal_marks()" type="button">Calculte marks</button>
+        <button onclick="" type="button">Generate Marksheet</button>
+        <h2 id="result"></h2>
+    </form>
+</body>
+<script>
+   
+    function cal_marks()
+    {
+    let English = +document.getElementById('i1').value
+    let Hindi = +document.getElementById('i2').value
+    let CS = +document.getElementById('i3').value
+    let Physics = +document.getElementById('i4').value
+    let Chemistry = +document.getElementById('i5').value
+    
+    
+    let total = English + Hindi + CS + Physics + Chemistry;
+    localStorage.setItem('total_marks',total)
+    let percentage = (total/500)*100;
+    localStorage.setItem('total_Percentage',percentage)
+    document.getElementById('result').innerHTML=`Total Marks :${total} <br> Total Percentage ${percentage}%`;
+    
+    }
+</script>
+</html>
